@@ -1,0 +1,523 @@
+{
+  "schema": 1,
+  "note": "十套内置主题（默认 slate）。所有颜色为 6 位十六进制（不带 #）。配色原则：底色带色温（不是中性灰）、主色压深、强调色取金属/矿石色，靠明度对比而非饱和度堆叠营造质感。",
+  "themes": [
+    {
+      "id": "slate",
+      "name": "墨岩金",
+      "base": "1E2A38",
+      "primary": "1E2A38",
+      "primarySoft": "E2E5E8",
+      "accent": "B4834A",
+      "accentSoft": "F5E9D8",
+      "bg": "F0EEE9",
+      "surface": "FFFFFF",
+      "surfaceAlt": "E7E3DA",
+      "ink": "14171C",
+      "body": "3B4048",
+      "muted": "6B7178",
+      "line": "DCD7CC",
+      "deep": "10161E",
+      "deepAlt": "1A222C",
+      "deepInk": "FFFFFF",
+      "deepMuted": "A7B0BA",
+      "dark": false,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.16,
+      "chart": [
+        "1E2A38",
+        "B4834A",
+        "5C7085",
+        "D9B27C",
+        "93A2B2",
+        "E3D6BF"
+      ],
+      "mood": "克制、有质感，冷灰底 + 金强调，卡片浮起后层次最清楚",
+      "bestFor": [
+        "管理学",
+        "市场营销",
+        "健康管理",
+        "职业教育",
+        "汇报型课件"
+      ]
+    },
+    {
+      "id": "academic",
+      "name": "学术青橙",
+      "base": "06666E",
+      "primary": "06666E",
+      "primarySoft": "D8E9E7",
+      "accent": "E0923F",
+      "accentSoft": "F9E5CC",
+      "bg": "F6F8F7",
+      "surface": "FFFFFF",
+      "surfaceAlt": "E6EFED",
+      "ink": "12201F",
+      "body": "38484A",
+      "muted": "65767A",
+      "line": "D8E3E1",
+      "deep": "073E42",
+      "deepAlt": "0A5155",
+      "deepInk": "FFFFFF",
+      "deepMuted": "A9C9C7",
+      "dark": false,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.05,
+      "chart": [
+        "06666E",
+        "E8994A",
+        "4E9498",
+        "C47237",
+        "9CC5C3",
+        "E7CBA4"
+      ],
+      "mood": "冷静、可信、适合理论与机制讲解",
+      "bestFor": [
+        "管理学",
+        "医学基础",
+        "市场营销",
+        "健康管理",
+        "理论课"
+      ]
+    },
+    {
+      "id": "cream",
+      "name": "奶油暖棕",
+      "base": "6B4630",
+      "primary": "6B4630",
+      "primarySoft": "EFE1CE",
+      "accent": "C98E52",
+      "accentSoft": "F7E5D0",
+      "bg": "FAF3E6",
+      "surface": "FFFDF8",
+      "surfaceAlt": "F2E6D3",
+      "ink": "2A1D14",
+      "body": "4A3929",
+      "muted": "786554",
+      "line": "E5D6BF",
+      "deep": "3A2718",
+      "deepAlt": "4F3623",
+      "deepInk": "FFF9F0",
+      "deepMuted": "D6BF9F",
+      "dark": false,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.06,
+      "chart": [
+        "6B4630",
+        "C98E52",
+        "9A6F50",
+        "DDB588",
+        "C6A98A",
+        "F0DEC6"
+      ],
+      "mood": "温和、生活化、适合案例与服务场景",
+      "bestFor": [
+        "服务管理",
+        "营养",
+        "护理人文",
+        "案例课"
+      ]
+    },
+    {
+      "id": "tech",
+      "name": "科技深蓝",
+      "base": "4C86F0",
+      "primary": "4C86F0",
+      "primarySoft": "16294A",
+      "accent": "3FD9C6",
+      "accentSoft": "0E3A3E",
+      "bg": "081222",
+      "surface": "0F1D35",
+      "surfaceAlt": "16294A",
+      "ink": "F3F7FF",
+      "body": "C3D2EB",
+      "muted": "8B9EC2",
+      "line": "1F3459",
+      "deep": "050C18",
+      "deepAlt": "0C1930",
+      "deepInk": "F3F7FF",
+      "deepMuted": "8FA3C4",
+      "dark": true,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.06,
+      "chart": [
+        "4C86F0",
+        "3FD9C6",
+        "88A8F5",
+        "A98BF0",
+        "2BB3A6",
+        "6490E0"
+      ],
+      "mood": "理性、前沿、适合数据与技术主题",
+      "bestFor": [
+        "信息技术",
+        "数据分析",
+        "医学影像",
+        "数字化"
+      ]
+    },
+    {
+      "id": "forest",
+      "name": "自然森林",
+      "base": "2C5A44",
+      "primary": "2C5A44",
+      "primarySoft": "DEE9D6",
+      "accent": "8FA854",
+      "accentSoft": "E9EFD6",
+      "bg": "F2F6EE",
+      "surface": "FFFFFF",
+      "surfaceAlt": "E6EFDF",
+      "ink": "17251C",
+      "body": "37493C",
+      "muted": "66796A",
+      "line": "D7E2D1",
+      "deep": "1A3A28",
+      "deepAlt": "274B35",
+      "deepInk": "F6FAF3",
+      "deepMuted": "B9CFB8",
+      "dark": false,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.05,
+      "chart": [
+        "2C5A44",
+        "9DB565",
+        "628C71",
+        "C3D49C",
+        "88AE94",
+        "DCE7CB"
+      ],
+      "mood": "自然、生长感，适合生态、健康与可持续",
+      "bestFor": [
+        "公共健康",
+        "生态",
+        "康养",
+        "农业"
+      ]
+    },
+    {
+      "id": "editorial",
+      "name": "编辑黑白",
+      "base": "1A1A1A",
+      "primary": "1A1A1A",
+      "primarySoft": "E4E1D8",
+      "accent": "D23F26",
+      "accentSoft": "FBE2DC",
+      "bg": "F6F4EE",
+      "surface": "FFFFFF",
+      "surfaceAlt": "EAE7DE",
+      "ink": "0F0F0F",
+      "body": "38352F",
+      "muted": "6E6A62",
+      "line": "D8D4C9",
+      "deep": "121212",
+      "deepAlt": "232323",
+      "deepInk": "FFFFFF",
+      "deepMuted": "B6B1A7",
+      "dark": false,
+      "fonts": {
+        "title": "宋体",
+        "body": "微软雅黑",
+        "serifTitle": true
+      },
+      "radius": 0,
+      "chart": [
+        "1A1A1A",
+        "D23F26",
+        "66625B",
+        "A29C93",
+        "C7C2B7",
+        "877F71"
+      ],
+      "mood": "克制、编辑感、字重对比强",
+      "bestFor": [
+        "人文社科",
+        "通识",
+        "艺术设计",
+        "评论课"
+      ]
+    },
+    {
+      "id": "wine",
+      "name": "人文酒红",
+      "base": "7A2438",
+      "primary": "7A2438",
+      "primarySoft": "EEDBDD",
+      "accent": "BC9256",
+      "accentSoft": "F1E3CE",
+      "bg": "FAF3EB",
+      "surface": "FFFCF8",
+      "surfaceAlt": "F0E2D4",
+      "ink": "291619",
+      "body": "493136",
+      "muted": "766264",
+      "line": "E2D2C3",
+      "deep": "47141F",
+      "deepAlt": "5C1D2A",
+      "deepInk": "FFFAF6",
+      "deepMuted": "D6B9AF",
+      "dark": false,
+      "fonts": {
+        "title": "宋体",
+        "body": "微软雅黑",
+        "serifTitle": true
+      },
+      "radius": 0.05,
+      "chart": [
+        "7A2438",
+        "C9A063",
+        "A04B5F",
+        "D9C09A",
+        "C48795",
+        "EADFCB"
+      ],
+      "mood": "典雅、叙事感，适合人文与医学史",
+      "bestFor": [
+        "医学人文",
+        "护理伦理",
+        "文学",
+        "历史"
+      ]
+    },
+    {
+      "id": "violet",
+      "name": "清新蓝紫",
+      "base": "4655B8",
+      "primary": "4655B8",
+      "primarySoft": "E0E1F6",
+      "accent": "A283DC",
+      "accentSoft": "EFE8FA",
+      "bg": "F6F6FE",
+      "surface": "FFFFFF",
+      "surfaceAlt": "EAE9F8",
+      "ink": "191C36",
+      "body": "383D5E",
+      "muted": "6A6F92",
+      "line": "D8D6EE",
+      "deep": "29336B",
+      "deepAlt": "354287",
+      "deepInk": "FBFAFF",
+      "deepMuted": "BFC3E8",
+      "dark": false,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.06,
+      "chart": [
+        "4655B8",
+        "A283DC",
+        "7E8CD8",
+        "CEB9EE",
+        "6473C8",
+        "C2B7EC"
+      ],
+      "mood": "轻盈、年轻、适合入门与通识课",
+      "bestFor": [
+        "新生导论",
+        "心理学",
+        "创新创业",
+        "通识"
+      ]
+    },
+    {
+      "id": "darktalk",
+      "name": "深色演讲",
+      "base": "14161A",
+      "primary": "EDEBE4",
+      "primarySoft": "2A2E35",
+      "accent": "E9B45C",
+      "accentSoft": "3A3227",
+      "bg": "14161A",
+      "surface": "1D2026",
+      "surfaceAlt": "272B33",
+      "ink": "F6F5F2",
+      "body": "CAC8C2",
+      "muted": "8C8A84",
+      "line": "31353C",
+      "deep": "0C0D10",
+      "deepAlt": "1A1D22",
+      "deepInk": "F8F6F1",
+      "deepMuted": "9A968E",
+      "dark": true,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.04,
+      "chart": [
+        "E9B45C",
+        "DBD7CE",
+        "8C8779",
+        "B08E5A",
+        "5C5A54",
+        "E6D2A8"
+      ],
+      "mood": "剧场感、强对比，适合讲座与开题",
+      "bestFor": [
+        "专题讲座",
+        "学术报告",
+        "思政课",
+        "公开课"
+      ]
+    },
+    {
+      "id": "clay",
+      "name": "陶土米",
+      "base": "6A4636",
+      "primary": "6A4636",
+      "primarySoft": "E8DACD",
+      "accent": "BE6A38",
+      "accentSoft": "F6E2D2",
+      "bg": "F8F3EC",
+      "surface": "FFFFFF",
+      "surfaceAlt": "EFE5D8",
+      "ink": "221913",
+      "body": "47372E",
+      "muted": "7A6858",
+      "line": "E3D6C5",
+      "deep": "2F2019",
+      "deepAlt": "463024",
+      "deepInk": "FFF9F2",
+      "deepMuted": "D0BAA6",
+      "dark": false,
+      "fonts": {
+        "title": "微软雅黑",
+        "body": "微软雅黑",
+        "serifTitle": false
+      },
+      "radius": 0.16,
+      "chart": [
+        "6A4636",
+        "BE6A38",
+        "94654A",
+        "D6955F",
+        "BFA089",
+        "EAD6C3"
+      ],
+      "mood": "温暖、手工感，适合人文与生活服务类课程",
+      "bestFor": [
+        "营养",
+        "护理人文",
+        "服务管理",
+        "通识课"
+      ]
+    }
+  ],
+  "autoRules": [
+    {
+      "match": [
+        "口腔",
+        "牙",
+        "解剖",
+        "生理",
+        "病理",
+        "药理",
+        "护理",
+        "临床",
+        "医学"
+      ],
+      "theme": "academic"
+    },
+    {
+      "match": [
+        "营销",
+        "市场",
+        "消费者",
+        "品牌",
+        "商业",
+        "管理",
+        "经济"
+      ],
+      "theme": "academic"
+    },
+    {
+      "match": [
+        "数据",
+        "算法",
+        "编程",
+        "信息技术",
+        "人工智能",
+        "统计",
+        "数字化"
+      ],
+      "theme": "tech"
+    },
+    {
+      "match": [
+        "营养",
+        "康养",
+        "生态",
+        "农业",
+        "可持续",
+        "社区卫生"
+      ],
+      "theme": "forest"
+    },
+    {
+      "match": [
+        "文学",
+        "历史",
+        "哲学",
+        "伦理",
+        "人文",
+        "艺术",
+        "设计"
+      ],
+      "theme": "editorial"
+    },
+    {
+      "match": [
+        "思政",
+        "党建",
+        "典礼",
+        "讲座",
+        "报告"
+      ],
+      "theme": "darktalk"
+    },
+    {
+      "match": [
+        "心理",
+        "新生",
+        "导论",
+        "创新",
+        "创业",
+        "通识"
+      ],
+      "theme": "violet"
+    },
+    {
+      "match": [
+        "服务",
+        "沟通",
+        "礼仪",
+        "养老",
+        "照护"
+      ],
+      "theme": "cream"
+    }
+  ],
+  "default": "slate"
+}

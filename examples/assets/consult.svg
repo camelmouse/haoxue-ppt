@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" width="1600" height="1000">
+  <rect width="1600" height="1000" fill="#EDF4F2"/>
+  <!-- 背景墙板 -->
+  <rect x="980" y="120" width="470" height="330" rx="6" fill="#FFFFFF" opacity="0.85"/>
+  <rect x="1020" y="170" width="390" height="10" rx="5" fill="#CFE3DF"/>
+  <rect x="1020" y="210" width="300" height="10" rx="5" fill="#CFE3DF"/>
+  <rect x="1020" y="250" width="340" height="10" rx="5" fill="#CFE3DF"/>
+  <g fill="#0E7C7B">
+    <rect x="1024" y="330" width="44" height="70" rx="4"/>
+    <rect x="1082" y="300" width="44" height="100" rx="4"/>
+    <rect x="1140" y="352" width="44" height="48" rx="4"/>
+  </g>
+  <rect x="1210" y="300" width="44" height="100" rx="4" fill="#E8833A"/>
+  <line x1="1010" y1="402" x2="1420" y2="402" stroke="#CFE3DF" stroke-width="4"/>
+  <!-- 窗 -->
+  <rect x="120" y="90" width="520" height="380" rx="8" fill="#DCEBE7"/>
+  <rect x="120" y="90" width="520" height="380" rx="8" fill="none" stroke="#C6DDD8" stroke-width="6"/>
+  <line x1="380" y1="90" x2="380" y2="470" stroke="#C6DDD8" stroke-width="6"/>
+  <line x1="120" y1="280" x2="640" y2="280" stroke="#C6DDD8" stroke-width="6"/>
+  <circle cx="560" cy="180" r="46" fill="#E8833A" opacity="0.55"/>
+  <!-- 地面 -->
+  <rect x="0" y="720" width="1600" height="280" fill="#E3EFEB"/>
+  <!-- 桌子 -->
+  <ellipse cx="800" cy="880" rx="470" ry="60" fill="#D5E5E0"/>
+  <rect x="330" y="640" width="940" height="230" rx="18" fill="#FFFFFF"/>
+  <rect x="330" y="640" width="940" height="26" rx="13" fill="#F3F7F5"/>
+  <!-- 桌上文件 -->
+  <g transform="rotate(-6 700 700)">
+    <rect x="600" y="660" width="230" height="150" rx="8" fill="#FBF6EC"/>
+    <rect x="628" y="690" width="150" height="9" rx="4.5" fill="#D9C7A8"/>
+    <rect x="628" y="716" width="176" height="9" rx="4.5" fill="#E5D8BF"/>
+    <rect x="628" y="742" width="120" height="9" rx="4.5" fill="#E5D8BF"/>
+    <rect x="628" y="768" width="160" height="9" rx="4.5" fill="#E5D8BF"/>
+  </g>
+  <!-- 左侧人物：顾客 -->
+  <g>
+    <path d="M362 470 h36 v90 h-36z" fill="#D9B395"/>
+    <path d="M248 650 q0 -158 132 -158 q132 0 132 158z" fill="#3C5B57"/>
+    <circle cx="380" cy="400" r="84" fill="#E9C6A8"/>
+    <path d="M296 404 q-4 -88 84 -88 q88 0 84 88 q-22 -34 -84 -34 q-62 0 -84 34z" fill="#4A4A4A"/>
+    <ellipse cx="296" cy="404" rx="12" ry="20" fill="#E9C6A8"/>
+    <ellipse cx="464" cy="404" rx="12" ry="20" fill="#E9C6A8"/>
+  </g>
+  <!-- 右侧人物：健康管理师（白大褂） -->
+  <g>
+    <path d="M1130 462 h36 v92 h-36z" fill="#E0BE9E"/>
+    <path d="M1008 650 q0 -166 140 -166 q140 0 140 166z" fill="#0E7C7B"/>
+    <circle cx="1148" cy="382" r="80" fill="#F0D2B6"/>
+    <path d="M1068 386 q-4 -84 80 -84 q84 0 80 84 q-22 -32 -80 -32 q-58 0 -80 32z" fill="#2A2A2A"/>
+    <ellipse cx="1068" cy="386" rx="11" ry="19" fill="#F0D2B6"/>
+    <ellipse cx="1228" cy="386" rx="11" ry="19" fill="#F0D2B6"/>
+    <rect x="1182" y="566" width="26" height="52" rx="4" fill="#FFFFFF" opacity="0.92"/>
+    <rect x="1188" y="574" width="14" height="10" rx="2" fill="#E8833A"/>
+  </g>
+  <!-- 笔与杯子 -->
+  <rect x="880" y="760" width="120" height="10" rx="5" fill="#0E7C7B" transform="rotate(8 880 760)"/>
+  <rect x="1050" y="700" width="66" height="86" rx="10" fill="#E8833A" opacity="0.9"/>
+  <!-- 绿植 -->
+  <g>
+    <path d="M1440 740 q-30 -90 20 -150 q40 60 10 150z" fill="#37664E"/>
+    <path d="M1470 740 q40 -80 100 -90 q-20 70 -80 90z" fill="#4C7F63"/>
+    <path d="M1420 740 q-70 -50 -70 -110 q60 20 80 110z" fill="#5B9273"/>
+    <path d="M1408 738 h130 l-18 86 h-94z" fill="#C98A5B"/>
+  </g>
+</svg>

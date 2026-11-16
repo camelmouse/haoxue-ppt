@@ -1,0 +1,287 @@
+{
+  "generatedAt": "2026-11-16T03:32:45.335Z",
+  "scanned": 11,
+  "count": 10,
+  "charts": [
+    {
+      "source": "health-marketing-academic.pptx",
+      "slide": 7,
+      "chartId": "chart1",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "087F87",
+        "3A4A47",
+        "6C7D79",
+        "F7FAF9"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-cream.pptx",
+      "slide": 7,
+      "chartId": "chart2",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "79543D",
+        "4C3B2C",
+        "7C6A58",
+        "FBF5E9"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-darktalk.pptx",
+      "slide": 7,
+      "chartId": "chart8",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "E8E5DE",
+        "C9C7C1",
+        "8E8C86",
+        "17191D"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-editorial.pptx",
+      "slide": 7,
+      "chartId": "chart5",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "222222",
+        "3C3A36",
+        "77736B",
+        "F7F6F2"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-forest.pptx",
+      "slide": 7,
+      "chartId": "chart4",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "37664E",
+        "3B4C40",
+        "6E7F6F",
+        "F3F7EF"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-tech.pptx",
+      "slide": 7,
+      "chartId": "chart3",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "3E78E8",
+        "C6D3EA",
+        "8FA2C4",
+        "0B1730"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-violet.pptx",
+      "slide": 7,
+      "chartId": "chart7",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "5368C8",
+        "3D4266",
+        "70759A",
+        "F7F7FF"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "health-marketing-wine.pptx",
+      "slide": 7,
+      "chartId": "chart6",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "842E43",
+        "4B363A",
+        "7A6668",
+        "FAF4ED"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "健康管理与营销-无图版.pptx",
+      "slide": 7,
+      "chartId": "chart1",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "087F87",
+        "3A4A47",
+        "6C7D79",
+        "F7FAF9"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    },
+    {
+      "source": "健康管理与营销.pptx",
+      "slide": 7,
+      "chartId": "chart1",
+      "type": "bar",
+      "title": "数据 · 触点频率与执行率",
+      "categories": [
+        "每周 1 次",
+        "每 2 周 1 次",
+        "每月 1 次",
+        "每季度 1 次"
+      ],
+      "series": [
+        "仍在执行比例（%）"
+      ],
+      "points": 4,
+      "colors": [
+        "087F87",
+        "3A4A47",
+        "6C7D79",
+        "F7FAF9"
+      ],
+      "editable": true,
+      "dataEditable": false,
+      "thumb": null,
+      "animation": false,
+      "tags": []
+    }
+  ]
+}

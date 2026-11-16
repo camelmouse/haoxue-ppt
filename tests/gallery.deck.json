@@ -1,0 +1,381 @@
+{
+  "meta": {
+    "slug": "layout-gallery",
+    "course": "版式样张",
+    "lesson": "全版式",
+    "title": "版式与组件样张",
+    "subtitle": "用于验证 18 种版式在不同主题、不同导航模式下的表现",
+    "audience": "开发与教研自检",
+    "institution": "haoxue-ppt",
+    "theme": "slate",
+    "imageMode": "auto",
+    "nav": "chapters",
+    "purpose": "showcase"
+  },
+  "chapters": [
+    {
+      "id": "g1",
+      "title": "结构类",
+      "short": "结构"
+    },
+    {
+      "id": "g2",
+      "title": "媒体类",
+      "short": "媒体"
+    },
+    {
+      "id": "g3",
+      "title": "收束",
+      "short": "收束"
+    }
+  ],
+  "pages": [
+    {
+      "layout": "cover",
+      "chapter": "g1",
+      "title": "版式与组件样张",
+      "subtitle": "同一套内容规范，在不同主题下的可读性与可编辑性验证。"
+    },
+    {
+      "layout": "divider",
+      "chapter": "g1",
+      "num": "01",
+      "title": "结构类版式",
+      "desc": "时间轴、矩阵、因果链——用来表达“关系”，而不是罗列信息。",
+      "pages": "第 3–5 页"
+    },
+    {
+      "layout": "timeline",
+      "chapter": "g1",
+      "kicker": "时间轴 · 病程演化",
+      "title": "同一个人，四年的四个节点",
+      "nodes": [
+        {
+          "label": "2021",
+          "title": "体检异常",
+          "body": "血糖偏高，未重视"
+        },
+        {
+          "label": "2022",
+          "title": "首次就诊",
+          "body": "开始用药，未改变生活方式"
+        },
+        {
+          "label": "2023",
+          "title": "并发症",
+          "body": "出现早期视网膜病变"
+        },
+        {
+          "label": "2024",
+          "title": "纳入管理",
+          "body": "两周一次随访，指标回落"
+        }
+      ],
+      "insight": "慢性病的成本，主要发生在“没有管理”的那几年。"
+    },
+    {
+      "layout": "matrix",
+      "chapter": "g1",
+      "kicker": "矩阵 · 客户分层",
+      "title": "把客户放到两个维度里看",
+      "axes": {
+        "top": "需求强度 高",
+        "bottom": "需求强度 低",
+        "right": "客户价值 低 → 高"
+      },
+      "quadrants": [
+        {
+          "x": 0.75,
+          "y": 0.8,
+          "text": "重点经营"
+        },
+        {
+          "x": 0.25,
+          "y": 0.8,
+          "text": "培育转化"
+        },
+        {
+          "x": 0.75,
+          "y": 0.2,
+          "text": "批量维护"
+        },
+        {
+          "x": 0.25,
+          "y": 0.2,
+          "text": "低成本触达"
+        }
+      ],
+      "points": [
+        {
+          "x": 0.78,
+          "y": 0.82,
+          "label": "术后康复",
+          "hi": true
+        },
+        {
+          "x": 0.62,
+          "y": 0.66,
+          "label": "慢病管理"
+        },
+        {
+          "x": 0.3,
+          "y": 0.72,
+          "label": "企业团检"
+        },
+        {
+          "x": 0.22,
+          "y": 0.28,
+          "label": "单次体检"
+        },
+        {
+          "x": 0.66,
+          "y": 0.24,
+          "label": "健康讲座"
+        }
+      ],
+      "asideTitle": "怎么读这张图",
+      "aside": [
+        "右上角是高需求高价值，必须配人；",
+        "左上角有需求但支付弱，用内容转化；",
+        "右下角价值高但需求弱，用套餐批量维护。"
+      ]
+    },
+    {
+      "layout": "bento",
+      "chapter": "g1",
+      "kicker": "栅格 · 一主多辅",
+      "title": "四项能力，不是同等重要",
+      "cells": [
+        {
+          "label": "关键指标",
+          "value": "78%",
+          "title": "复购来自第一次交付",
+          "body": "不是来自折扣，也不是来自广告投放。",
+          "tone": "accent"
+        },
+        {
+          "label": "支撑",
+          "title": "触点密度",
+          "body": "两周一次，比一次讲透更有效。"
+        },
+        {
+          "label": "支撑",
+          "title": "效果可见",
+          "body": "把变化做成一张能看懂的图。"
+        },
+        {
+          "label": "成本",
+          "title": "获客成本",
+          "body": "内容与转介绍，而不是投放。"
+        },
+        {
+          "label": "成本",
+          "title": "人力配置",
+          "body": "一个健康管理师带 80 人。"
+        }
+      ]
+    },
+    {
+      "layout": "bigIdea",
+      "chapter": "g1",
+      "kicker": "观点 · 一句话",
+      "text": "顾客不是不重视健康，是不愿意为「不确定」付钱。",
+      "highlight": [
+        "不确定"
+      ],
+      "source": "健康信念模型 · 课堂讨论用"
+    },
+    {
+      "layout": "layers",
+      "chapter": "g1",
+      "kicker": "结构 · 三层",
+      "title": "看见的、管用的、留得住的",
+      "layers": [
+        {
+          "label": "表层",
+          "title": "产品层：看得见",
+          "body": "套餐、项目、报告解读——最先被比较，也最先被压价。"
+        },
+        {
+          "label": "机制",
+          "title": "服务层：决定效果",
+          "body": "评估、干预、随访执行——效果发生在这里。"
+        },
+        {
+          "label": "底层",
+          "title": "关系层：决定复购",
+          "body": "信任、依从、长期陪跑——续费率几乎只由这层决定。"
+        }
+      ],
+      "insight": "能被比价的部分，注定不赚钱。"
+    },
+    {
+      "layout": "causalChain",
+      "chapter": "g1",
+      "kicker": "因果链 · 复购从哪里来",
+      "title": "复购不是一个动作，是一条链",
+      "nodes": [
+        {
+          "label": "01",
+          "title": "触点密度",
+          "body": "两周一次随访，让服务持续发生"
+        },
+        {
+          "label": "02",
+          "title": "执行率上升",
+          "body": "顾客真的做了，才有可观察的变化"
+        },
+        {
+          "label": "03",
+          "title": "效果可见",
+          "body": "复评数据把“感觉”变成“证据”"
+        },
+        {
+          "label": "04",
+          "title": "续费与转介",
+          "body": "结果",
+          "hi": true
+        }
+      ],
+      "insight": "链条断在任何一环，后面的复购都不会发生。"
+    },
+    {
+      "layout": "divider",
+      "chapter": "g2",
+      "num": "02",
+      "title": "媒体类版式",
+      "desc": "图片不是装饰，是用来“看到”证据的。无图时用矢量色板撑住版面。",
+      "pages": "第 7–9 页",
+      "nav": "steps"
+    },
+    {
+      "layout": "zoom",
+      "chapter": "g2",
+      "kicker": "局部放大 · 看图说话",
+      "title": "把注意力压到一个细节上",
+      "image": "../examples/assets/consult.jpg",
+      "detail": {
+        "x": 0.468,
+        "y": 0.705,
+        "r": 0.155,
+        "title": "桌面上摊开的那张纸",
+        "notes": [
+          "纸上是四项指标，不是三十八项；",
+          "只圈出一项，其余留白；",
+          "旁边一支笔——现场记录，不是事后补。"
+        ]
+      }
+    },
+    {
+      "layout": "fullImage",
+      "chapter": "g2",
+      "kicker": "全幅图片 · 过渡页",
+      "title": "让课堂停两秒",
+      "line": "全幅页只承担情绪与场景，不承载知识点。字号 52pt，最多两行。",
+      "image": "../examples/assets/consult.jpg",
+      "credit": "教学示意图 · haoxue-ppt 绘制"
+    },
+    {
+      "layout": "question",
+      "chapter": "g2",
+      "kicker": "互动 · 导航 steps 模式",
+      "title": "这一页把导航切到「进度条」模式",
+      "nav": "steps",
+      "timer": "限时 30 秒",
+      "options": [
+        {
+          "text": "编号与进度条代替章节刻度"
+        },
+        {
+          "text": "章节名可以隐藏",
+          "ans": true
+        },
+        {
+          "text": "超过 6 章自动紧凑"
+        },
+        {
+          "text": "封面与全幅页自动隐藏"
+        }
+      ],
+      "hint": "导航有三种可见模式 + 一种隐藏模式，按页面语义选择，不按个人喜好。"
+    },
+    {
+      "layout": "offsetImageText",
+      "chapter": "g2",
+      "kicker": "图文 · 镜像版式",
+      "title": "图在右、文在左，用于承接上一页的阅读方向",
+      "side": "right",
+      "image": "../examples/assets/consult.jpg",
+      "points": [
+        {
+          "title": "镜像只改左右",
+          "body": "字号、行距、留白全部不变，避免“翻页时跳一下”。"
+        },
+        {
+          "title": "图片按 cover 裁切",
+          "body": "不做拉伸；比例差异超过 8% 会被质检标出来。"
+        }
+      ]
+    },
+    {
+      "layout": "agenda",
+      "chapter": "g3",
+      "kicker": "课程导览",
+      "title": "三种导航模式的差别",
+      "items": [
+        {
+          "title": "chapters",
+          "desc": "章节名 + 序号 + 刻度，最完整",
+          "minutes": "默认"
+        },
+        {
+          "title": "steps",
+          "desc": "进度条 + 序号，适合流程型课程",
+          "minutes": "见 P8"
+        },
+        {
+          "title": "minimal",
+          "desc": "只留序号，适合内容极满的页",
+          "minutes": "见 P9"
+        },
+        {
+          "title": "hidden",
+          "desc": "封面、全幅页、章节分隔页",
+          "minutes": "自动"
+        }
+      ],
+      "asideTitle": "选择原则",
+      "stats": [
+        {
+          "value": "4",
+          "label": "种导航模式"
+        },
+        {
+          "value": "6",
+          "label": "章及以上自动紧凑"
+        }
+      ]
+    },
+    {
+      "layout": "summary",
+      "chapter": "g3",
+      "kicker": "本讲小结",
+      "title": "版式服务于知识结构",
+      "points": [
+        {
+          "title": "先判断知识结构，再选版式",
+          "body": "因果用链、层级用层、对比用双栏。"
+        },
+        {
+          "title": "一页只讲一件事",
+          "body": "信息密度靠删减，不靠缩字号。"
+        },
+        {
+          "title": "重复的是规范，不是版式",
+          "body": "字号、边距、色阶固定；版式按内容变化。"
+        }
+      ],
+      "next": "下一步：用你的课程内容替换示例文案，跑一次质检。"
+    }
+  ]
+}
