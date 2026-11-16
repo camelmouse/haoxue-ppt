@@ -251,3 +251,13 @@ python scripts/sheet.py out/main-preview -o "out/预览-健康管理与营销.pn
 - 示例课件强调覆盖 9/40 → 16/40 页（bento 正文、debate、flow 等系统补 `**` 标记）
 
 **验收**：自检 239 项全过（+10）；九色族 × 样张 qa 全 0/0；五份交付 qa+colorqa 双过；Teaching QA 9.12。
+
+
+## 1.4.4 · 封面/封尾质感配方固化
+
+用户确认封面与封尾质感出众，将其固化为不可回退的配方：
+
+- `layout-library.md`：新增「封面/封尾质感配方」——五层质感（对角渐变底/网格肌理/玻璃卡/金属饰线/柔光圆环弧）逐层说明实现与作用
+- `qa.py`：新增 TEXTURE 检查——cover/divider/summary 缺任一质感层即 WARN
+- `tests/test_skill.js`：新增 [15/15] 段，对封面/封尾逐层断言（254 项自检）
+- `canvas.js`：circle ops 补记 name（圆环断言的前提）

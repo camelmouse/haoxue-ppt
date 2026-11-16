@@ -168,7 +168,7 @@ class Canvas {
       shadow: this._shadow(o),
       objectName: o.name,
     });
-    this.ops.push({ t: 'circle', cx, cy, d, fill: o.fill || null, opacity: o.opacity, line: o.line || null, lw: o.lw });
+    this.ops.push({ t: 'circle', cx, cy, d, fill: o.fill || null, opacity: o.opacity, line: o.line || null, lw: o.lw, name: o.name });
     return this;
   }
 

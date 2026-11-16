@@ -515,6 +515,27 @@ def check_slide(slide, idx, prs, preview_dir):
             add(idx, 'DENSITY', WARN,
                 f'页面填充率 {filled*100:.0f}%（建议 ≤{DENSITY_MAX*100:.0f}%）：元素过密，留白不足')
 
+    # 17) 深色页质感配方：封面/章节页/小结的"高级感"来自一组固定肌理，
+    #     任何一层缺失都会让深色页退回"一大块死色"——必须报警而不是悄悄退化。
+    if layout in ('cover', 'divider', 'summary'):
+        shape_names = [(sh.name or '') for sh in slide.shapes]
+        has_diag = 'grad.diag' in shape_names
+        has_grid = any(n.startswith('decor.grid.') for n in shape_names)
+        has_glass = 'grad.card' in shape_names
+        has_metal = any(n.startswith('grad.gold') for n in shape_names)
+        has_soft = (any(n.startswith('decor.ring') for n in shape_names)
+                    or any(n.startswith('decor.sheen') for n in shape_names)
+                    or sum(1 for n in shape_names if n == 'grad.arc') >= 2)
+        missing = []
+        if not has_diag: missing.append('对角渐变底')
+        if not has_grid: missing.append('网格肌理')
+        if layout != 'divider' and not has_glass: missing.append('玻璃卡')
+        if not has_metal: missing.append('金属饰线')
+        if not has_soft: missing.append('柔光/圆环/装饰弧')
+        if missing:
+            add(idx, 'TEXTURE', WARN,
+                f'深色页缺质感层：{"、".join(missing)}（见 layout-library.md「封面/封尾质感配方」）')
+
     # 14) 阴影方向 / 浓度
     if shadow_bad:
         kinds = {k for k, _, _ in shadow_bad}

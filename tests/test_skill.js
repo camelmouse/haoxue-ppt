@@ -30,7 +30,7 @@ const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 
 async function main() {
   // ---------- 1. 主题系统 ----------
-  console.log('\n[1/14] 主题系统');
+  console.log('\n[1/15] 主题系统');
   const themes = themeMod.all();
   ok('内置主题数量 ≥8', themes.length >= 8, `实际 ${themes.length}`);
   const REQUIRED_TOKENS = ['base', 'primary', 'primarySoft', 'accent', 'accentSoft', 'bg',
@@ -51,7 +51,7 @@ async function main() {
   eq('主题 id 不重复', uniqueIds.size, themes.length);
 
   // ---------- 2. 版式系统 ----------
-  console.log('\n[2/14] 版式系统');
+  console.log('\n[2/15] 版式系统');
   ok('版式数量 ≥12', LAYOUTS.length >= 12, `实际 ${LAYOUTS.length}`);
   const REQUIRED_LAYOUTS = ['bigIdea', 'fullImage', 'offsetImageText', 'timeline', 'debate',
     'flow', 'layers', 'dataChart', 'caseStory', 'question', 'zoom', 'summary'];
@@ -343,7 +343,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
   }
 
   // ---------- 11. 认知动作引擎（每页"学生此刻该做什么"） ----------
-  console.log('\n[11/14] 认知动作引擎');
+  console.log('\n[11/15] 认知动作引擎');
   {
     const cog = require('../scripts/lib/cognitive');
     const { validateSpec } = require('../scripts/lib/deck');
@@ -388,7 +388,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
 
 
   // ---------- 12. Color Engine ----------
-  console.log('\n[12/14] Color Engine');
+  console.log('\n[12/15] Color Engine');
   {
     const P = require('../scripts/lib/palette');
     const fams = P.all().filter((f) => !f.custom);
@@ -448,7 +448,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
 
 
   // ---------- 13. 页内强调（Color Engine 第二层：重点必须由颜色说出来） ----------
-  console.log('\n[13/14] 页内强调');
+  console.log('\n[13/15] 页内强调');
   {
     const { parseEmph, stripEmph } = require('../scripts/lib/canvas');
     const { contrast } = require('../scripts/lib/color');
@@ -482,7 +482,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
 
 
   // ---------- 14. 背景弧装饰 + 焦点荧光笔 ----------
-  console.log('\n[14/14] 背景弧装饰与焦点高亮');
+  console.log('\n[14/15] 背景弧装饰与焦点高亮');
   {
     const { bgArcs } = require('../scripts/lib/decor');
     const { contrast, luminance } = require('../scripts/lib/color');
@@ -512,6 +512,42 @@ print("KEEP" if "41" in texts[6] else "LOST")
       const t = themeMod.resolve(id);
       ok(`${id} 有 hlMark token`, !!t.hlMark);
     }
+  }
+
+
+  // ---------- 15. 封面/封尾质感配方（防回退） ----------
+  console.log('\n[15/15] 封面/封尾质感配方');
+  {
+    const texSpec = {
+      meta: { course: '测试课程', title: '质感配方测试', minutes: 45 },
+      chapters: [
+        { title: '导入', short: '导入' }, { title: '展开', short: '展开' },
+      ],
+      pages: [
+        { layout: 'cover', title: '谁说了算？', subtitle: '组织中的权力与规则' },
+        { layout: 'summary', title: '记住三件事',
+          points: [{ title: '第一件事', body: '说明' }] },
+      ],
+    };
+    const rt2 = await build(texSpec, { baseDir });
+    const names = (pg) => pg.ops.filter((o) => o.name).map((o) => String(o.name));
+    const cov = rt2.pages[0], sum = rt2.pages[rt2.pages.length - 1];
+
+    for (const [label, pg] of [['封面', cov], ['封尾', sum]]) {
+      const nm = names(pg);
+      ok(`${label}：对角渐变底（grad.diag）`, nm.includes('grad.diag'));
+      ok(`${label}：网格肌理（decor.grid）`, nm.some((x) => x.startsWith('decor.grid.')));
+      ok(`${label}：玻璃卡（grad.card）`, nm.some((x) => x === 'grad.card'), nm.join(','));
+      ok(`${label}：金属饰线（grad.gold/goldv）`, nm.some((x) => x.startsWith('grad.gold')));
+      const arcs = pg.ops.filter((o) => o.t === 'arc');
+      ok(`${label}：页角装饰弧 ≥2 条`, arcs.length >= 2, `实际 ${arcs.length}`);
+      const hasText = pg.ops.some((o) => o.t === 'text' && o.text && String(o.text).trim());
+      ok(`${label}：正文存在`, hasText);
+    }
+    ok('封面：标题首字水印（decor.watermark）', names(cov).includes('decor.watermark'),
+      names(cov).filter((x) => x.startsWith('decor')).join(','));
+    ok('封面：同心圆环（decor.ring）', names(cov).some((x) => x.startsWith('decor.ring')));
+    ok('封尾：玻璃条 ≥1 张', names(sum).filter((x) => x === 'grad.card').length >= 1);
   }
 
   // ---------- 汇总 ----------
