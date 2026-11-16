@@ -85,6 +85,8 @@ function complete(t) {
   // em：正文里 **关键词** 的颜色——就是主色，但必须对页底 ≥4.5；深色卡上换 emOnDeep。
   // emAccent：!!焦点!! 的颜色；深色卡上换 accentOnDeep。
   // 有了这两个 token，"重点在哪"由颜色自己说话，而不是靠加粗硬撑。
+  // !!焦点!! 的荧光笔底色：比 accentSoft 更浅一档，只做"笔迹"不做色块
+  out.hlMark = norm(out.hlMark || mix(out.accentSoft || out.accent, out.bg, 0.45));
   out.em = norm(out.em || out.primaryText);
   out.emAccent = norm(out.emAccent || out.accentText);
   out.emOnDeep = norm(out.emOnDeep || tuneText(mix(out.primary, 'FFFFFF', 0.55), out.deep, 4.5));

@@ -30,7 +30,7 @@ const readJson = (p) => JSON.parse(fs.readFileSync(p, 'utf8'));
 
 async function main() {
   // ---------- 1. 主题系统 ----------
-  console.log('\n[1/13] 主题系统');
+  console.log('\n[1/14] 主题系统');
   const themes = themeMod.all();
   ok('内置主题数量 ≥8', themes.length >= 8, `实际 ${themes.length}`);
   const REQUIRED_TOKENS = ['base', 'primary', 'primarySoft', 'accent', 'accentSoft', 'bg',
@@ -51,7 +51,7 @@ async function main() {
   eq('主题 id 不重复', uniqueIds.size, themes.length);
 
   // ---------- 2. 版式系统 ----------
-  console.log('\n[2/13] 版式系统');
+  console.log('\n[2/14] 版式系统');
   ok('版式数量 ≥12', LAYOUTS.length >= 12, `实际 ${LAYOUTS.length}`);
   const REQUIRED_LAYOUTS = ['bigIdea', 'fullImage', 'offsetImageText', 'timeline', 'debate',
     'flow', 'layers', 'dataChart', 'caseStory', 'question', 'zoom', 'summary'];
@@ -343,7 +343,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
   }
 
   // ---------- 11. 认知动作引擎（每页"学生此刻该做什么"） ----------
-  console.log('\n[11/13] 认知动作引擎');
+  console.log('\n[11/14] 认知动作引擎');
   {
     const cog = require('../scripts/lib/cognitive');
     const { validateSpec } = require('../scripts/lib/deck');
@@ -388,7 +388,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
 
 
   // ---------- 12. Color Engine ----------
-  console.log('\n[12/13] Color Engine');
+  console.log('\n[12/14] Color Engine');
   {
     const P = require('../scripts/lib/palette');
     const fams = P.all().filter((f) => !f.custom);
@@ -448,7 +448,7 @@ print("KEEP" if "41" in texts[6] else "LOST")
 
 
   // ---------- 13. 页内强调（Color Engine 第二层：重点必须由颜色说出来） ----------
-  console.log('\n[13/13] 页内强调');
+  console.log('\n[13/14] 页内强调');
   {
     const { parseEmph, stripEmph } = require('../scripts/lib/canvas');
     const { contrast } = require('../scripts/lib/color');
@@ -478,6 +478,40 @@ print("KEEP" if "41" in texts[6] else "LOST")
     // 无标记文本不受影响
     eq('无标记原样返回', parseEmph('普通正文', T05, {}).runs.length, 1);
     ok('普通段不加粗', parseEmph('普通正文', T05, {}).runs[0].bold === undefined);
+  }
+
+
+  // ---------- 14. 背景弧装饰 + 焦点荧光笔 ----------
+  console.log('\n[14/14] 背景弧装饰与焦点高亮');
+  {
+    const { bgArcs } = require('../scripts/lib/decor');
+    const { contrast, luminance } = require('../scripts/lib/color');
+    const { parseEmph } = require('../scripts/lib/canvas');
+
+    // bgArcs：每页 4 条弧，命名 grad.arc（postprocess 渐隐、qa 豁免都认这个名字）
+    const fake = { T: themeMod.resolve('c03'), ops: [], arc(_cx, _cy, _r, o) { this.ops.push(o); } };
+    bgArcs(fake, { dark: false });
+    eq('每页 4 条装饰弧', fake.ops.length, 4);
+    ok('弧命名统一 grad.arc', fake.ops.every((a) => a.name === 'grad.arc'));
+    ok('线宽 ≤1.5pt', fake.ops.every((a) => a.width <= 1.5), fake.ops.map((a) => a.width).join(','));
+    ok('弧颜色取浅档（对页底对比 <2.5，不抢正文）',
+      fake.ops.every((a) => contrast(a.color, fake.T.bg) < 2.5),
+      fake.ops.map((a) => `${a.color}:${contrast(a.color, fake.T.bg).toFixed(2)}`).join(' '));
+
+    const fakeDark = { T: themeMod.resolve('c03'), ops: [], arc(_cx, _cy, _r, o) { this.ops.push(o); } };
+    bgArcs(fakeDark, { dark: true });
+    ok('深色页弧用深底同族色', fakeDark.ops.every((a) => contrast(a.color, fakeDark.T.deep) < 1.6));
+
+    // !!焦点!! → hl 标记 → highlight 荧光笔
+    const T03 = themeMod.resolve('c03');
+    const parsed = parseEmph('核心是!!决策权!!的归属', T03, {});
+    const focus = parsed.runs.find((r) => r.text === '决策权');
+    ok('!! 焦点带 hl 标记', focus && focus.hl === true && focus.bold, JSON.stringify(focus));
+    ok('hlMark 是浅色笔迹（亮度 >0.85）', luminance(T03.hlMark) > 0.78, T03.hlMark);
+    for (const id of ['c05', 'c01', 'slate']) {
+      const t = themeMod.resolve(id);
+      ok(`${id} 有 hlMark token`, !!t.hlMark);
+    }
   }
 
   // ---------- 汇总 ----------

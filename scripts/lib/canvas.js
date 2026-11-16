@@ -30,7 +30,10 @@ function parseEmph(str, T, o) {
   const parts = String(str).split(EMPH_RE).filter((x) => x !== '');
   const runs = parts.map((seg) => {
     if (seg.startsWith('**') && seg.endsWith('**')) return { text: seg.slice(2, -2), bold: true, color: emC };
-    if (seg.startsWith('!!') && seg.endsWith('!!')) return { text: seg.slice(2, -2), bold: true, color: acC };
+    if (seg.startsWith('!!') && seg.endsWith('!!')) {
+      // 焦点词：强调色 + 荧光笔底色（浅底才有；深底上底色会发脏，只留颜色）
+      return { text: seg.slice(2, -2), bold: true, color: acC, hl: !onDark };
+    }
     return { text: seg };
   });
   return { runs, plain: stripEmph(str) };
@@ -169,6 +172,22 @@ class Canvas {
     return this;
   }
 
+  // 圆弧线：装饰层专用。range 是 [起角, 终角]（0°=3点钟方向，顺时针，y 轴向下）。
+  // 命名一律 grad.arc——postprocess 会把线的纯色换成两端渐隐的渐变，
+  // "进页面时是气质，读到内容时已经忘了它"。线宽纪律 ≤1.5pt，画在内容之前（压底）。
+  arc(cx, cy, r, o = {}) {
+    const [a0, a1] = o.range || [90, 180];
+    this.slide.addShape('arc', {
+      x: cx - r, y: cy - r, w: r * 2, h: r * 2,
+      angleRange: [a0, a1],
+      fill: { color: 'FFFFFF', transparency: 100 },
+      line: { color: norm(o.color || this.T.accent), width: o.width || 1.25 },
+      objectName: o.name || 'grad.arc',
+    });
+    this.ops.push({ t: 'arc', cx, cy, r, range: [a0, a1], color: o.color || this.T.accent });
+    return this;
+  }
+
   line(x1, y1, x2, y2, o = {}) {
     const x = Math.min(x1, x2), y = Math.min(y1, y2);
     const w = Math.abs(x2 - x1) || 0.0001, h = Math.abs(y2 - y1) || 0.0001;
@@ -282,6 +301,8 @@ class Canvas {
           italic: r.italic === undefined ? !!o.italic : !!r.italic,
           fontSize: snap(r.size || size, 'down'),
           fontFace: font,
+          // !!焦点!! 的荧光笔：整页唯一的视觉焦点位，比纯颜色更"跳"但仍是主题色
+          highlight: r.hl ? norm(this.T.hlMark || this.T.accentSoft) : undefined,
         };
         const parts = String(r.text).split('\n');
         parts.forEach((part, idx) => {

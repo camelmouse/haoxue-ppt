@@ -1,6 +1,6 @@
 ---
 name: haoxue-ppt
-description: 教学设计驱动的讲课课件生成器。七层架构：教学意图 → 叙事 → 认知 → 内容 → 设计 → PPTX → 质检。输入教材/大纲/参考 PPT，输出原生可编辑的 16:9 PPT。内置九种认知动作校验（每页标注"学生此刻该做什么"）、Ghost Deck 标题测试、参考 PPT 的 Design DNA 提取、七维教学评分（<8 分重做）、Color Engine 色彩层级引擎（10 套 Color Families：少色相、多色阶；少纯色、多表面）、18 种版式、右上角章节导航、16 项技术质检 + Color QA 用色纪律检查。当用户要"做一份课件/教学 PPT/讲课 PPT"、"把这章内容做成课件"、"学这个 PPT 的风格重做一份"、"改一下第 8 页"时使用。不服务汇报型 PPT。
+description: 教学设计驱动的讲课课件生成器。七层架构：教学意图 → 叙事 → 认知 → 内容 → 设计 → PPTX → 质检。输入教材/大纲/参考 PPT，输出原生可编辑的 16:9 PPT。内置九种认知动作校验（每页标注"学生此刻该做什么"）、Ghost Deck 标题测试、参考 PPT 的 Design DNA 提取、七维教学评分（<8 分重做）、Color Engine 色彩层级引擎（10 套 Color Families：少色相、多色阶；少纯色、多表面）、页角弧线装饰、18 种版式、右上角章节导航、16 项技术质检 + Color QA 用色纪律检查。当用户要"做一份课件/教学 PPT/讲课 PPT"、"把这章内容做成课件"、"学这个 PPT 的风格重做一份"、"改一下第 8 页"时使用。不服务汇报型 PPT。
 compatibility: 需要 Node.js ≥18 与 pptxgenjs（构建）、JSZip（后处理）。可选：sharp（局部放大裁切）、Python + python-pptx/Spire.Presentation（渲染校对、质检、DNA 提取与教学评分）。
 ---
 

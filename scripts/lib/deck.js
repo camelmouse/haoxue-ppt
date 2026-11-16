@@ -167,6 +167,13 @@ async function build(spec, opts = {}) {
       theme, pageNo: page.index, warnings, icons: iconResolver, deck, pptx,
     };
     const cv = new Canvas(slide, pptx, ctx);
+    // 背景圆弧装饰：最先画 = 压在所有内容之下。整图页跳过（会被图盖住，画了也白画）。
+    if (lay.id !== 'fullImage') {
+      require('./decor').bgArcs(cv, {
+        dark: theme.dark || ['cover', 'divider', 'summary'].includes(lay.id),
+        layout: lay.id,
+      });
+    }
     lay.build(cv, p, deck);
 
     const navMode = page.nav === 'hidden' ? 'hidden' : (meta.nav || 'chapters');

@@ -1,6 +1,6 @@
 {
   "name": "haoxue-ppt",
-  "version": "1.4.1",
+  "version": "1.4.3",
   "description": "耗学 PPT —— 教学设计驱动的 AI 讲课课件生成 Skill（结构化内容 → 版式引擎 → 原生可编辑 PPTX → 自动质检）",
   "license": "MIT",
   "private": true,

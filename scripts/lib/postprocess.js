@@ -186,11 +186,32 @@ function ornShape(sp, opts = {}) {
   return sp.slice(0, i0) + open[0] + body.replace(fill[0], g) + '</p:spPr>' + sp.slice(i1);
 }
 
+// 弧线渐隐：把装饰弧的纯色描边换成两端透明、中段实的渐变——
+// 弧从画布外"淡入"，走到头"淡出"，没有任何一个端点戳在页面上。
+function arcFade(sp) {
+  const ln = sp.match(/<a:ln\b[^>]*>[\s\S]*?<\/a:ln>/);
+  if (!ln) return sp;
+  const val = (ln[0].match(/<a:srgbClr val="([0-9A-Fa-f]{6})"/) || [, ''])[1];
+  if (!val) return sp;
+  const a = (v) => Math.round(v * 100000);
+  const g = '<a:gradFill rotWithShape="1"><a:gsLst>'
+    + `<a:gs pos="0"><a:srgbClr val="${val}"><a:alpha val="${a(0.02)}"/></a:srgbClr></a:gs>`
+    + `<a:gs pos="42000"><a:srgbClr val="${val}"><a:alpha val="${a(0.92)}"/></a:srgbClr></a:gs>`
+    + `<a:gs pos="100000"><a:srgbClr val="${val}"><a:alpha val="${a(0.04)}"/></a:srgbClr></a:gs>`
+    + '</a:gsLst><a:lin ang="0" scaled="0"/></a:gradFill>';
+  return sp.replace(ln[0], ln[0].replace(/<a:solidFill>[\s\S]*?<\/a:solidFill>/, g));
+}
+
 function applyDepth(xml, opts = {}) {
   let n = 0;
   const out = xml.replace(/<p:sp>[\s\S]*?<\/p:sp>/g, (sp) => {
     if (/name="scrim\.grad"/.test(sp)) {
       const next = fadeScrim(sp);
+      if (next !== sp) n += 1;
+      return next;
+    }
+    if (/name="grad\.arc/.test(sp)) {
+      const next = arcFade(sp);
       if (next !== sp) n += 1;
       return next;
     }
@@ -252,7 +273,7 @@ async function postprocess(filePath, opts = {}) {
   let lifted = 0;
   for (const name of slides) {
     const xml = await zip.file(name).async('string');
-    if (!xml.includes('name="card.') && !xml.includes('name="scrim.grad"')) continue;
+    if (!xml.includes('name="card.') && !xml.includes('name="scrim.grad"') && !xml.includes('name="grad.arc"')) continue;
     const r = applyDepth(xml, opts);
     if (r.xml !== xml) { zip.file(name, r.xml); lifted += r.count; }
   }

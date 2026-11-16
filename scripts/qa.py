@@ -284,10 +284,14 @@ def check_slide(slide, idx, prs, preview_dir):
         # 1) 越界
         out = x < -TOL or y < -TOL or x2 > CANVAS_W + TOL or y2 > CANVAS_H + TOL
         if out:
-            decor = name.lower().startswith('decor') or name in ('bg', 'scrim')
+            decor = (name.lower().startswith('decor') or name in ('bg', 'scrim')
+                     or name == 'grad.arc')
             add(idx, 'BOUNDS', INFO if decor else ERROR,
                 f'{"装饰出血" if decor else "元素越界"}：{name or "未命名"} ({x:.2f},{y:.2f})-({x2:.2f},{y2:.2f})')
 
+        # 装饰弧：贴边出血的背景元素，越界是故意的，也不占任何密度
+        if name == 'grad.arc':
+            continue
         # 13/16) 设计规则的材料：铺底元素与页眉页脚不参与
         full_bleed = bool(BLEED.match(name)) or w * h > 0.6 * CANVAS_W * CANVAS_H
         aux_el = bool(AUX.match(name))
